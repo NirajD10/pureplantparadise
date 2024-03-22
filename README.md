@@ -84,7 +84,7 @@ npm run dev
 Explore our demo store.
 
 <p align="left">
-  [![Button Click]][https://pureplantparadise.netlify.app/admin] 
+  <a href="https://pureplantparadise.netlify.app/admin" class="button">Admin Panel</a>
 </p>
 <b>Admin Demo user:</b>
 
@@ -92,9 +92,9 @@ Email: demoadmin@pureplantparadise.com<br/>
 Password: demo@12345
 
 <p align="left">
-  [![Button Click]][https://pureplantparadise.netlify.app] 
+  <a href="https://pureplantparadise.netlify.app" class="button">Store Front</a>
 </p>
-<b>Admin Demo user:</b>
+<b>Demo user:</b>
 
 Email: demo@pureplantparadise.com<br/>
 Password: demo7890
