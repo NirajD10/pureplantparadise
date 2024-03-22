@@ -109,7 +109,7 @@ If you like my work, feel free to:
 
 You can ask questions, and participate in discussions about EverShop-related topics in the EverShop Discord channel.
 
-<a href="https://discordapp.com/users/niraj_deshmukh10"><img src="https://programmaticsoup.com/wp-content/uploads/2021/07/1__AsB_hCguMYC-wEG2Bidmw.png" /></a>
+<a href="https://discordapp.com/users/niraj_deshmukh10"><img width="150" src="https://programmaticsoup.com/wp-content/uploads/2021/07/1__AsB_hCguMYC-wEG2Bidmw.png" /></a>
 
 ### Create a bug report
 
