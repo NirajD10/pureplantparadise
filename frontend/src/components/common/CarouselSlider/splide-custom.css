@@ -1,0 +1,53 @@
+.splide__arrow svg {
+  fill: #fafafa !important;
+  height: 2em !important;
+  width: 2em !important;
+}
+
+.splide__arrow:disabled {
+  opacity: 0.6;
+}
+
+.splide__arrow--prev {
+  background-color: #003e29;
+  width: 2.8em;
+  height: 2.8em;
+}
+
+/* Customize the next (right) arrow */
+.splide__arrow--next {
+  background-color: #003e29;
+  width: 2.8em;
+  height: 2.8em;
+}
+
+.splide__arrow:hover {
+  background-color: #003e29;
+  color: #fafafa;
+}
+
+.splide__pagination__page {
+  background-color: #659986 !important;
+  width: 0.8em;
+  height: 0.8em;
+}
+
+.splide__pagination__page.is-active {
+  background-color: #003e29 !important;
+  width: 0.8em;
+  height: 0.8em;
+}
+
+.splide__slide {
+  opacity: 0.6;
+}
+
+.splide__slide.is-active {
+  opacity: 1;
+}
+
+.splide__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
