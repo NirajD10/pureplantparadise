@@ -15,7 +15,7 @@
 
 ## Introduction
 
-PurePlantParadise is a MERN Stack Based and React, node js ecommerce platform with essential commerce features. Built with React, Express.js, Node.js and MongoDB modular and admin cms.
+PurePlantParadise is a MERN Stack Based and React, node js ecommerce platform with essential commerce features. Built with React, Express.js, Node.js and MongoDB modular and admin CMS.
 
 ## Installation
 
