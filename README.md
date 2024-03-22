@@ -1,6 +1,6 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 <p align="center">
-<img width="60" height="68" alt="Pureplantparadise Logo" src="https://github.com/NirajD10/pureplantparadise/blob/main/frontend/src/assets/LOGO.png"/>
+<img alt="Pureplantparadise Logo" src="https://github.com/NirajD10/pureplantparadise/blob/main/frontend/src/assets/LOGO.png"/>
 </p>
 <p align="center">
   <h1 align="center">PurePlantParadise</h1>
