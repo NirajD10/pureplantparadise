@@ -1,8 +1,5 @@
-import { Checkbox } from "@/components/ui/checkbox";
-
 import { Link } from "react-router-dom";
 
-import { Check, X } from "@phosphor-icons/react";
 import { Badge } from "@/components/ui/badge";
 import DeleteAttributeAction from "./DeleteAttributeAction";
 
@@ -51,14 +48,12 @@ export const columns = [
       if (row.getValue("display_customer") === "yes") {
         badgeContent = (
           <Badge className="uppercase gap-2">
-            <Check size={16} color="#fcfcfc" />
             {row.getValue("display_customer")}
           </Badge>
         );
       } else {
         badgeContent = (
           <Badge variant="destructive" className="uppercase">
-            <X size={16} color="#fcfcfc" />
             {row.getValue("display_customer")}
           </Badge>
         );

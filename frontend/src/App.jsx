@@ -31,12 +31,14 @@ import OrderPaymentStatus from "@/pages/OrderPaymentStatus";
 import Profile from "./pages/Profile";
 import ProfileLayout from "./components/common/Profile/ProfileLayout";
 import UserOrders from "./pages/UserOrders";
-import UserOrderDetails from "./pages/UserOrderDetails";
+import UserOrderDetails, {
+  loader as userOrderdetailLoader,
+} from "./pages/UserOrderDetails";
 
 /* admin pages */
 import PrivateRoutes from "./pages/admin/PrivateRoutes";
 import AuthPage from "./components/admin/Auth/AuthPage";
-import Dashboard from "./pages/admin/Dashboard";
+import Dashboard, { loader as dashboardLoader } from "./pages/admin/Dashboard";
 import AdminErrorPage from "./pages/admin/AdminErrorPage";
 import Orders from "./pages/admin/Orders/Orders";
 import Customers, {
@@ -53,12 +55,12 @@ import Attributes, {
   loader as attributesListLoader,
 } from "./pages/admin/Attributes/Attributes";
 import AttributesForm from "./pages/admin/Attributes/AttributesForm";
-import OrderDetail from "./pages/admin/Orders/OrderDetail";
+import OrderDetail, {
+  loader as orderdetailLoader,
+} from "./pages/admin/Orders/OrderDetail";
 import Settings from "./pages/admin/Settings";
 
 import { queryClient } from "./lib/http";
-
-
 
 const router = createBrowserRouter([
   {
@@ -66,9 +68,9 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { index: true, element: <Home /> },
-      { path: "login", element: <Login />},
-      { path: "register", element: <Register />},
-      { path: "search", element: <Search />},
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
+      { path: "search", element: <Search /> },
       { path: "error", element: <ErrorPage /> },
       {
         path: "collections",
@@ -95,7 +97,11 @@ const router = createBrowserRouter([
         children: [
           { index: true, element: <Profile /> },
           { path: "orders", element: <UserOrders /> },
-          { path: "orders/:id", element: <UserOrderDetails />}
+          {
+            path: "orders/:id",
+            element: <UserOrderDetails />,
+            loader: userOrderdetailLoader,
+          },
         ],
       },
     ],
@@ -110,12 +116,16 @@ const router = createBrowserRouter([
     element: <PrivateRoutes />,
     children: [
       { index: true, element: <Navigate to="/admin/dashboard" /> },
-      { path: "dashboard", element: <Dashboard /> },
+      { path: "dashboard", element: <Dashboard />, loader: dashboardLoader },
       {
         path: "orders",
         children: [
           { index: true, element: <Orders /> },
-          { path: "edit/:id", element: <OrderDetail /> },
+          {
+            path: "edit/:id",
+            element: <OrderDetail />,
+            loader: orderdetailLoader,
+          },
         ],
       },
       {

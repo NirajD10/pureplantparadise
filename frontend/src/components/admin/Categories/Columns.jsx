@@ -1,11 +1,6 @@
-import { Checkbox } from "@/components/ui/checkbox";
-import { clsx } from "clsx";
 import { Link } from "react-router-dom";
 
-import { Check, X } from "@phosphor-icons/react";
 import { Badge } from "@/components/ui/badge";
-// import { DataTableColumnHeader } from "./data-table-column-header";
-// import { DataTableRowActions } from "./data-table-row-actions";
 
 export const columns = [
   {
@@ -62,14 +57,12 @@ export const columns = [
       if (row.getValue("ismenuinclude") === "yes") {
         badgeContent = (
           <Badge className="uppercase gap-2">
-            <Check size={18} color="#fcfcfc" />
             {row.getValue("ismenuinclude")}
           </Badge>
         );
       } else {
         badgeContent = (
           <Badge variant="destructive" className="uppercase gap-2">
-            <X size={18} color="#fcfcfc" />
             {row.getValue("ismenuinclude")}
           </Badge>
         );
@@ -80,8 +73,5 @@ export const columns = [
         </div>
       );
     },
-    // filterFn: (row, id, value) => {
-    //   return value.includes(row.getValue(id));
-    // },
   },
 ];

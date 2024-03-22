@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import UserTableComponent from "@/components/common/Table/main";
 import { columns } from "@/components/common/UserOrder/Columns";
 import { useSelector } from "react-redux";
+import { queryClient } from "../lib/http";
 
 function UserOrders() {
   const [orderlists, setOrderlists] = useState([]);
@@ -37,3 +38,11 @@ function UserOrders() {
 }
 
 export default UserOrders;
+
+export function loader({ params }) {
+  return queryClient.fetchQuery({
+    queryKey: ["order-detail", { id: params.id }],
+    queryFn: ({ signal }) =>
+      fetchSingleUserOrderDetail({ id: params.id, signal }),
+  });
+}

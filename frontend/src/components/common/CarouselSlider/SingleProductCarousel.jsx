@@ -39,7 +39,7 @@ function SingleProductCarousel({ media, alt }) {
         className="mb-4 rounded-lg"
       >
         {media?.map((img, index) => (
-          <SplideSlide key={index}>
+          <SplideSlide key={img}>
             <img src={img} alt={alt} className="bg-cover rounded-lg" />
           </SplideSlide>
         ))}
@@ -75,7 +75,7 @@ function SingleProductCarousel({ media, alt }) {
         className="mb-5"
       >
         {media?.map((img, index) => (
-          <SplideSlide key={index}>
+          <SplideSlide key={img}>
             <img src={img} alt={alt} className="bg-cover" />
           </SplideSlide>
         ))}

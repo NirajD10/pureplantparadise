@@ -13,6 +13,7 @@ import BestSellingProducts from "@/components/admin/Overview/BestSellingProducts
 import DestructiveCallout from "@/components/Callout/DestructiveCallout";
 
 import { getDashboard } from "@/lib/admin-http";
+import { queryClient } from "@/lib/http";
 
 function Dashboard() {
   const {
@@ -34,13 +35,13 @@ function Dashboard() {
       ) : null}
       {isError && (
         <DestructiveCallout
-          title={error.statusText || "Failed to retrieve data" }
+          title={error.statusText || "Failed to retrieve data"}
           message={error?.data.message}
         />
       )}
       {dashboardAPI ? (
         <React.Fragment>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 my-7">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-col-4 my-7">
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">
@@ -172,3 +173,10 @@ function Dashboard() {
 }
 
 export default Dashboard;
+
+export function loader({ params }) {
+  return queryClient.fetchQuery({
+    queryKey: ["dashboard-detail"],
+    queryFn: ({ signal }) => getDashboard({ signal }),
+  });
+}
