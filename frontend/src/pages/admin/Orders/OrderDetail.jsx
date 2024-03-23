@@ -70,10 +70,3 @@ function OrderDetail() {
 }
 
 export default OrderDetail;
-
-export function loader({ params }) {
-  return queryClient.fetchQuery({
-    queryKey: ["order-details", { id: params.id }],
-    queryFn: ({ signal }) => getSingleOrderDetail({ id: params.id, signal }),
-  });
-}

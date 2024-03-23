@@ -31,9 +31,7 @@ import OrderPaymentStatus from "@/pages/OrderPaymentStatus";
 import Profile from "./pages/Profile";
 import ProfileLayout from "./components/common/Profile/ProfileLayout";
 import UserOrders from "./pages/UserOrders";
-import UserOrderDetails, {
-  loader as userOrderdetailLoader,
-} from "./pages/UserOrderDetails";
+import UserOrderDetails from "./pages/UserOrderDetails";
 
 /* admin pages */
 import PrivateRoutes from "./pages/admin/PrivateRoutes";
@@ -55,9 +53,7 @@ import Attributes, {
   loader as attributesListLoader,
 } from "./pages/admin/Attributes/Attributes";
 import AttributesForm from "./pages/admin/Attributes/AttributesForm";
-import OrderDetail, {
-  loader as orderdetailLoader,
-} from "./pages/admin/Orders/OrderDetail";
+import OrderDetail from "./pages/admin/Orders/OrderDetail";
 import Settings from "./pages/admin/Settings";
 
 import { queryClient } from "./lib/http";
@@ -100,7 +96,6 @@ const router = createBrowserRouter([
           {
             path: "orders/:id",
             element: <UserOrderDetails />,
-            loader: userOrderdetailLoader,
           },
         ],
       },
@@ -124,7 +119,6 @@ const router = createBrowserRouter([
           {
             path: "edit/:id",
             element: <OrderDetail />,
-            loader: orderdetailLoader,
           },
         ],
       },
