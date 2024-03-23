@@ -8,6 +8,7 @@ import CustomerSection from "@/components/admin/Orders/CustomerSection";
 
 import { CaretCircleLeft } from "@phosphor-icons/react";
 import { getSingleOrderDetail } from "@/lib/admin-http";
+import { toast } from "sonner";
 
 function OrderDetail() {
   const { id } = useParams();
@@ -33,6 +34,12 @@ function OrderDetail() {
       loadingRef.current.complete();
     }
   }, [orderdetail, isPending]);
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(error.message.info);
+    }
+  }, [isError, error]);
 
   return (
     <div className="container my-12">
