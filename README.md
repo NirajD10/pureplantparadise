@@ -1,6 +1,6 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 <p align="center">
-<img width="60" height="68" alt="Pureplantparadise Logo" src="https://github.com/NirajD10/pureplantparadise/blob/main/frontend/src/assets/LOGO.png"/>
+<img alt="Pureplantparadise Logo" src="https://github.com/NirajD10/pureplantparadise/blob/main/frontend/src/assets/LOGO.png"/>
 </p>
 <p align="center">
   <h1 align="center">PurePlantParadise</h1>
@@ -84,7 +84,7 @@ npm run dev
 Explore our demo store.
 
 <p align="left">
-  [![Button Click]][https://pureplantparadise.netlify.app/admin] 
+  <a href="https://pureplantparadise.netlify.app/admin" class="button">Admin Panel</a>
 </p>
 <b>Admin Demo user:</b>
 
@@ -92,9 +92,9 @@ Email: demoadmin@pureplantparadise.com<br/>
 Password: demo@12345
 
 <p align="left">
-  [![Button Click]][https://pureplantparadise.netlify.app] 
+  <a href="https://pureplantparadise.netlify.app" class="button">Store Front</a>
 </p>
-<b>Admin Demo user:</b>
+<b>Demo user:</b>
 
 Email: demo@pureplantparadise.com<br/>
 Password: demo7890
@@ -109,7 +109,7 @@ If you like my work, feel free to:
 
 You can ask questions, and participate in discussions about EverShop-related topics in the EverShop Discord channel.
 
-<a href="https://discordapp.com/users/niraj_deshmukh10"><img src="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/.github/images/discord_banner_github.svg" /></a>
+<a href="https://discordapp.com/users/niraj_deshmukh10"><img width="150" src="https://programmaticsoup.com/wp-content/uploads/2021/07/1__AsB_hCguMYC-wEG2Bidmw.png" /></a>
 
 ### Create a bug report
 
