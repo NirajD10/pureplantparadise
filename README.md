@@ -92,6 +92,12 @@ VITE_PRODUCTION_MODE=false
 VITE_URL=""
 ```
 
+you need install npm dependecy in each folder(frontend and backend).
+```bash
+npm install
+```
+
+
 if you want to start local,
 
 Backend (make sure the current path should be inside of backend) -
