@@ -49,6 +49,33 @@ RAZORPAY_SECRET_KEY=""
 
 ```
 
+We need to accept firebase image storage bucket, so you have to create new project and make sure fill api key to backend .env file.
+Then lastly, Go to 'Rules' tabs from "Storage" and update changes -
+```bash
+rules_version = '2';
+
+// Craft rules based on data in your Firestore database
+// allow write: if firestore.get(
+//    /databases/(default)/documents/users/$(request.auth.uid)).data.isAdmin;
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // This rule allows anyone with your Storage bucket reference to view, edit,
+    // and delete all data in your Storage bucket. It is useful for getting
+    // started, but it is configured to expire after 30 days because it
+    // leaves your app open to attackers. At that time, all client
+    // requests to your Storage bucket will be denied.
+    //
+    // Make sure to write security rules for your app before that time, or else
+    // all client requests to your Storage bucket will be denied until you Update
+    // your rules
+    match /{allPaths=**} {
+      allow read, write: if request.time < timestamp.date(2035, 5, 14);
+    }
+  }
+}
+```
+
 for Frontend, in .env.local file-
 
 ```bash
