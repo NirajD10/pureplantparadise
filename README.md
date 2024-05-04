@@ -49,7 +49,7 @@ RAZORPAY_SECRET_KEY=""
 
 ```
 
-We need to accept firebase image storage bucket, so you have to create new project and make sure fill api key to backend .env file.
+We need to accept firebase image storage bucket, so you have to create new project from firebase and make sure fill api key to backend .env file.
 Then lastly, Go to 'Rules' tabs from "Storage" and update changes -
 ```bash
 rules_version = '2';
