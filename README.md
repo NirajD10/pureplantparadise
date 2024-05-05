@@ -24,14 +24,14 @@ Before installing each frontend and backend dependencies, create a .env file on 
 for Backend, in .env file -
 
 ```bash
-#Frontend URL
+## Frontend URL
 FRONTEND_URL="<REPLACE FROTEND URL>"
-# for example - FRONTEND_URL = "http://localhost:5173"
+## for example - FRONTEND_URL = "http://localhost:5173"
 
-#Mongodb URL
+## Mongodb URL
 MONGODB_SERVER_KEY="<PUT MONGDB SERVER KEY>"
 
-#Firebase Storage
+## Firebase Storage
 API_KEY=""
 AUTH_DOMAIN=""
 PROJECT_ID=""
@@ -39,11 +39,11 @@ STORAGE_BUCKET=""
 MESSAGING_SENDER_ID=""
 APP_ID=""
 
-#JWT SECRET Token - decide yourself secret key.
+## JWT SECRET Token - decide yourself secret key.
 JWT_TOKEN_SECRET_MESSAGE=""
 ADMIN_JWT_TOKEN_SECRET_MESSAGE=""
 
-#Razorpay payment gateway key
+## Razorpay payment gateway key
 RAZORPAY_API_KEY=""
 RAZORPAY_SECRET_KEY=""
 
@@ -81,14 +81,14 @@ for Frontend, in .env.local file-
 ```bash
 VITE_BACKEND="<BACKEND URL>"
 BACKEND="<BACKEND URL>"
-# Make sure replace your backend url
+## Make sure replace your backend url
 VITE_AUTH_API_URL="<BACKEND URL>/auth/"
 VITE_ADMIN_AUTH_API_URL="<BACKEND URL>/admin/"
 
-#if you are planning to build, then change to true
+## if you are planning to build, then change to true
 VITE_PRODUCTION_MODE=false
 
-#Frontend url
+## Frontend url
 VITE_URL=""
 ```
 
