@@ -33,13 +33,10 @@ app.use((error, req, res, next) => {
 
 /* Mongodb options */
 const options = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  keepAlive: true,
-  keepAliveInitialDelay: 300000, // 5 minutes
+  minPoolSize: 1,
+  maxPoolSize: 10,
   socketTimeoutMS: 45000, // 45 seconds timeout for inactivity
   serverSelectionTimeoutMS: 5000, // 5 seconds server selection timeout
-  maxIdleTimeMS: 300000, // 5 minutes max idle time
 };
 
 mongoose
