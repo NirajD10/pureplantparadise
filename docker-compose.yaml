@@ -1,0 +1,52 @@
+version: '3.1'
+services:
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - pureplantparadise-network
+    volumes:
+      - mongo-data:/data/db
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - "8081:8081"
+    networks:
+      - pureplantparadise-network
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=password
+      - ME_CONFIG_MONGODB_SERVER=mongo
+  server:
+    image: server
+    build:
+      context: ./apps/server
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./apps/server:/app
+    networks:
+      - pureplantparadise-network
+    depends_on:
+      - mongo
+  client:
+    image: client
+    build:
+      context: ./apps/client
+      dockerfile: Dockerfile
+    stdin_open: true
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./apps/client:/app
+    depends_on:
+      - server
+networks:
+  pureplantparadise-network:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local
