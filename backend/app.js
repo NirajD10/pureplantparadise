@@ -4,9 +4,11 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors({
-  allowedHeaders: "Content-Type,Authorization"
-}));
+app.use(
+  cors({
+    allowedHeaders: "Content-Type,Authorization",
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -14,7 +16,6 @@ app.use(express.urlencoded({ extended: true }));
 const shopRoute = require("./routes/shop");
 const authRoute = require("./routes/auth");
 const AdminshopRoute = require("./routes/admin");
-
 
 app.use("/", shopRoute);
 app.use("/auth", authRoute);
@@ -31,6 +32,10 @@ app.use((error, req, res, next) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.send("PurePlantParadise API");
+});
+
 /* Mongodb options */
 const options = {
   minPoolSize: 1,
@@ -43,8 +48,12 @@ mongoose
   .connect(process.env.MONGODB_SERVER_KEY, options)
   .then((result) => {
     console.log("mongodb connected");
-    app.listen(3000, () => {
+    app.listen(process.env.BACKEND_PORT, () => {
       console.log("Backend Server started");
     });
   })
   .catch((err) => console.log(err));
+
+// app.listen(process.env.BACKEND_PORT, () => {
+//   console.log("Backend Server started");
+// });

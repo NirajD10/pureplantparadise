@@ -1,6 +1,6 @@
 const Customers = require("../models/customers");
 const AdminAccount = require("../models/adminuser");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { validationResult } = require("express-validator");
 

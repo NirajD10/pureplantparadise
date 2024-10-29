@@ -1,0 +1,49 @@
+name: pureplantparadise-app
+
+services:
+  mongo:
+    image: mongo:7.0.12
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - mern-app
+  api:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file: ./backend/.env
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    ports:
+      - 4004:4004
+    networks:
+      - mern-app
+  
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file: ./frontend/.env.local
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - mern-app
+    ports:
+      - 5173:5173
+    command: npm run dev -- --host
+    depends_on:
+      - api
+
+volumes:
+  mongo_data:
+
+networks:
+  mern-app:
+    driver: bridge
+
